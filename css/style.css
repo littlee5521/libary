@@ -5,7 +5,7 @@ html {
 
 .body-text {
   color: black;
-  font-size: max(1.5rem, 2vw);
+  font-size: max(2rem, 2vw);
   font-family: Droid;
 }
 
@@ -118,6 +118,66 @@ html {
 .card__checkbox {
   aspect-ratio: 1/1;
   width: max(1rem, 1vw);
+}
+
+/*/////////////////////////////////  OVERLAY    ////////////////////////////////////////*/
+.overlay {
+  position: fixed;
+  width: min(700px, 85%);
+  height: max(700px, 20%);
+  background-color: #e0e0e0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 100px 100px 100vh 100vw rgba(0, 0, 0, 0.89);
+  text-align: center;
+  visibility: hidden;
+}
+
+.overlay__wrapper {
+  margin: 5%;
+}
+
+.overlay__header {
+  font-size: max(16px, 1vw);
+}
+
+.overlay__input {
+  width: 75%;
+  font-size: max(1rem, 1vw);
+  font-family: Droid;
+  overflow-wrap: break-word;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.overlay__textarea {
+  box-sizing: border-box;
+  max-width: 75%;
+  min-width: 75%;
+  font-size: max(1rem, 1vw);
+  font-family: Droid;
+  resize: none;
+}
+
+.overlay__checkbox {
+  aspect-ratio: 1/1;
+  width: max(1rem, 0.6vw);
+}
+
+.overlay__button {
+  font-size: max(1rem, 1vw);
+  background-color: black;
+  color: #e0e0e0;
+  font-family: Bio-kid;
+  padding: 2%;
+}
+
+.overlay__button:hover {
+  color: white;
 }
 
 /*/////////////////////////////////  MEDIA QUERIES    /////////////////////////////////*/
