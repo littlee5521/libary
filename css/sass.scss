@@ -60,28 +60,33 @@ html {
 .hero__header {
   margin-top: min(50px, 30%);
   gap: 15px;
+  display: grid;
+  height: 30%;
 }
 
 .hero__button {
   background-color: white;
   border: none;
+  width: fit-content;
+  margin: auto;
 }
 
 .hero__img {
   aspect-ratio: 1/1;
   max-height: 200px;
-  grid-column: 1/-1;
+  grid-column: 1/2;
   grid-row: 1;
 }
-
+/*when button grid is set to grid display it causes a bug where the images disapeera 
+    what could be happening here?*/
 .hero__button__grid {
   display: grid;
   align-items: flex-end;
-  justify-items: flex-end;
+  justify-content: center;
 }
 
 .hero__img_add {
-  grid-column: 1/-1;
+  grid-column: 1/2;
   grid-row: 1;
   background-color: #e0e0e0;
   width: 50px;
