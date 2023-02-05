@@ -152,6 +152,8 @@ html {
 
 .overlay__header {
   font-size: max(16px, 1vw);
+  width: 75%;
+  margin: auto;
 }
 
 .overlay__input {
@@ -188,6 +190,12 @@ html {
 
 .overlay__button:hover {
   color: white;
+}
+
+.overlay__exit {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /*/////////////////////////////////  MEDIA QUERIES    /////////////////////////////////*/

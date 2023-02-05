@@ -14,7 +14,7 @@
       <div class="sidebar"></div>
       <div class="hero">
         <div class="hero__header">
-          <h1 class="header">HEllo</h1>
+          <h1 class="header">Hello</h1>
           <p class="body-text">Have you been doing your reading human</p>
           <button class="hero__button">
             <div class="hero__button__grid">
@@ -52,24 +52,36 @@
     <div class="overlay">
       <div class="overlay__wrapper">
         <h1 class="header overlay__header">Add your book</h1>
-        <input
-          placeholder="If you give a mouse a cookie"
-          class="overlay__input"
-          type="text"
-          id="overlay__title"
-        />
-        <input
-          placeholder="Laura Numeroff"
-          class="overlay__input"
-          type="text"
-          id="overlay__author"
-        />
-        <input
-          id="overlay__pages"
-          placeholder="15 pages"
-          class="overlay__input"
-          type="number"
-        />
+        <div>
+          <label for="overlay__title">*</label>
+          <input
+            placeholder="If you give a mouse a cookie"
+            class="overlay__input"
+            type="text"
+            id="overlay__title"
+          />
+        </div>
+        <div>
+          <label for="overlay__author">*</label>
+          <input
+            placeholder="Laura Numeroff"
+            class="overlay__input"
+            type="text"
+            id="overlay__author"
+          />
+        </div>
+        <div>
+          <label for="overlay__pages">*</label>
+          <input
+            min="1"
+            max="10000"
+            oninput="validity.valid||(value='');"
+            id="overlay__pages"
+            placeholder="15 pages"
+            class="overlay__input"
+            type="number"
+          />
+        </div>
         <textarea
           id="overlay__notes"
           class="overlay__textarea"
@@ -87,8 +99,11 @@
             id="overlay__isread"
           />
         </p>
-        <button class="overlay__button">Add book</button>
+        <button id="overlay__addBook" class="overlay__button">Add book</button>
       </div>
+      <button id="overlay__exit" class="overlay__button overlay__exit">
+        X
+      </button>
     </div>
   </body>
 </html>

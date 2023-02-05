@@ -1,10 +1,12 @@
 const overlayButton = document.querySelector(".hero__button");
 
-const addBookButton = document.querySelector(".overlay__button");
+const addBookButton = document.getElementById("overlay__addBook");
 
 const overlay = document.querySelector(".overlay");
 
 const bookList = document.querySelector(".books-list");
+
+const overlayExit = document.getElementById("overlay__exit");
 
 let isHidden = 0;
 
@@ -19,7 +21,8 @@ const overlayPages = document.getElementById("overlay__pages");
 const overlayNotes = document.getElementById("overlay__notes");
 
 const overlayIsread = document.getElementById("overlay__isread");
-/*/////////////////// Variables for the overlay inputs //////////////////*/
+
+/*/////////////////// Show the overlay screen /////////////////////////////*/
 
 overlayButton.addEventListener("click", () => {
   if (isHidden == 0) {
@@ -27,10 +30,20 @@ overlayButton.addEventListener("click", () => {
   }
 });
 
+/*/////////////////// Event listener to create card ////////////////////////*/
+
 addBookButton.addEventListener("click", () => {
-  createCard();
-  overlay.style.visibility = "hidden";
+  if (
+    overlayTitle.value != "" ||
+    overlayAuthor.value != "" ||
+    overlayPages.value != ""
+  ) {
+    createCard();
+    overlayUtilities.clean();
+  }
 });
+
+/*/////////////////// Object Creator for books/////////////////////////////*/
 
 function bookCreator(title, author, pages, notes, isread) {
   this.title = title;
@@ -39,6 +52,8 @@ function bookCreator(title, author, pages, notes, isread) {
   this.notes = notes;
   this.read = isread;
 }
+
+/*/////////////////// Creates card in the dom /////////////////////////////*/
 
 function createCard() {
   const book = new bookCreator(
@@ -96,3 +111,20 @@ function createCard() {
   newCard.appendChild(cardBackGround);
   bookList.appendChild(newCard);
 }
+
+/*/////////////////// Exit button for overlay /////////////////////////////*/
+
+overlayExit.addEventListener("click", () => {
+  overlayUtilities.clean();
+});
+
+const overlayUtilities = {
+  clean: function () {
+    overlayAuthor.value = "";
+    overlayTitle.value = "";
+    overlayPages.value = "";
+    overlayNotes.value = "";
+    overlayIsread.checked = false;
+    overlay.style.visibility = "hidden";
+  },
+};
