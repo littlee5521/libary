@@ -46,7 +46,7 @@ function createCard() {
     overlayAuthor.value,
     overlayPages.value,
     overlayNotes.value,
-    overlayIsread.value
+    overlayIsread.checked
   );
 
   let numberOfCards =
@@ -89,7 +89,7 @@ function createCard() {
   const cardCheckbox = document.createElement("input");
   cardCheckbox.type = "checkbox";
   cardCheckbox.classList.add("card__checkbox");
-  cardCheckbox.value = book.read;
+  cardCheckbox.checked = book.read;
 
   cardRead.appendChild(cardCheckbox);
   cardBackGround.appendChild(cardRead);
