@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="sidebar"></div>
-      <div class="books-list">
+      <div class="books-list" id="cardContainer">
         <div class="card">
           <div class="card__background">
             <h1 class="header card__header">Sword of Shannara</h1>
@@ -56,14 +56,22 @@
           placeholder="If you give a mouse a cookie"
           class="overlay__input"
           type="text"
+          id="overlay__title"
         />
         <input
           placeholder="Laura Numeroff"
           class="overlay__input"
           type="text"
+          id="overlay__author"
         />
-        <input placeholder="15 pages" class="overlay__input" type="number" />
+        <input
+          id="overlay__pages"
+          placeholder="15 pages"
+          class="overlay__input"
+          type="number"
+        />
         <textarea
+          id="overlay__notes"
           class="overlay__textarea"
           name="Text1"
           cols="10000"
@@ -72,7 +80,12 @@
         ></textarea>
         <p class="overlay__input">
           Read:
-          <input class="overlay__checkbox" type="checkbox" name="" id="" />
+          <input
+            class="overlay__checkbox"
+            type="checkbox"
+            name=""
+            id="overlay__isread"
+          />
         </p>
         <button class="overlay__button">Add book</button>
       </div>

@@ -34,7 +34,6 @@ html {
   grid-template-columns: 0.01fr 0.98fr 0.01fr;
   background-color: black;
   color: white;
-  grid-template-rows: minmax(200px, 800px) 1fr;
 }
 
 .sidebar {
@@ -96,18 +95,24 @@ html {
 
 .books-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0.25fr));
+  grid-template-columns: repeat(4, 1fr);
   background-color: #e0e0e0;
+  gap: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card {
-  padding: 12.5% 12.5%;
+  padding: 12.5% 0;
 }
 
 .card__background {
+  width: 80%;
   border: 5px solid white;
   box-shadow: 2px 2px white;
   overflow-wrap: break-word;
+  height: 100%;
+  margin: auto;
 }
 
 .card__header {
@@ -187,7 +192,7 @@ html {
 
 /*/////////////////////////////////  MEDIA QUERIES    /////////////////////////////////*/
 
-@media (max-width: 919px) {
+@media (max-width: 1432px) {
   .books-list {
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
   }
